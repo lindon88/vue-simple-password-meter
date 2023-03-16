@@ -1,6 +1,6 @@
 {
   "name": "vue-simple-password-meter",
-  "version": "0.1.0",
+  "version": "9.0.1",
   "private": false,
   "description": "A really simple password strength meter. customizable with css",
   "author": {
@@ -18,9 +18,6 @@
   },
   "main": "dist/passwordMeter.umd.js",
   "unpkg": "dist/passwordMeter.umd.min.js",
-  "files": [
-    "dist"
-  ],
   "devDependencies": {
     "@vue/cli-plugin-babel": "^4.1.0",
     "@vue/cli-plugin-eslint": "^4.2.2",
