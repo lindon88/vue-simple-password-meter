@@ -17,38 +17,21 @@ const scorePassword = pass => {
   const hasNumber = numberRegex.test(pass)
   const hasRepeatChars = repeatCharRegex.test(pass)
 
-  if (pass.length > 4) {
-    if ((hasLowerCase || hasUpperCase) && hasNumber) {
-      numCharMix = 1
+
+  if (pass.length >= 8 && hasLowerCase && hasUpperCase && hasNumber && hasSpecialChar) {
+    if (pass.length == 8) {
+      score = 1;
     }
-
-    if (hasUpperCase && hasLowerCase) {
-      caseMix = 1
+    if (pass.length >= 9 && pass.length <= 10) {
+      score = 2;
     }
-
-    if ((hasLowerCase || hasUpperCase || hasNumber) && hasSpecialChar) {
-      specialChar = 1
+    if (pass.length >= 11 && pass.length <= 14) {
+      score = 3;
     }
-
-    if (pass.length > 8) {
-      length = 1
-    }
-
-    if (pass.length > 12 && !hasRepeatChars) {
-      length = 2
-    }
-
-    if (pass.length > 25 && !hasRepeatChars) {
-      length = 3
-    }
-
-    score = length + specialChar + caseMix + numCharMix
-
-    if (score > 4) {
-      score = 4
+    if (pass.length > 14) {
+      score = 4;
     }
   }
-
   return score
 }
 
